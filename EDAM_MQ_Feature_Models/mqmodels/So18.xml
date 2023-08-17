@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="716,21"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="So18">
+			<graphics key="collapsed" value="false"/>
+			<and name="Qualitative">
+				<and name="Communication Pattern">
+					<and name="Request/Reply">
+					<feature name="Correlation ID"/>
+					<feature name="Service"/>
+					<feature name="Receiver"/>
+				</and>
+				<and name="Publish/Subscribe">
+				<graphics key="collapsed" value="false"/>
+				<feature name="Publisher"/>
+				<feature name="Channel"/>
+				<and name="Message">
+					<feature name="Cyclic Data"/>
+					<feature name="Continuous Data"/>
+					<feature name="Sproadic Data"/>
+				</and>
+				<feature name="Receiver [2]"/>
+			</and>
+			<and name="Architecture">
+				<feature name="Broker"/>
+				<feature name="Multiple Point-to-Point"/>
+			</and>
+			<and name="Protocol">
+				<and name="Transport Layer">
+					<feature name="TCP"/>
+				</and>
+				<feature name="Communication Layer"/>
+			</and>
+		</and>
+		<and name="Payload Type">
+			<and name="Serialization">
+				<feature name="Build-In"/>
+				<feature name="String-Serialization"/>
+				<feature name="User-Provided"/>
+			</and>
+		</and>
+		<and name="Delivery Guarantees">
+			<feature name="At Least Once"/>
+			<feature name="At Most Once"/>
+			<feature name="Exactly Once"/>
+		</and>
+		<and name="Security">
+			<feature name="Encryption"/>
+			<and name="Authentication">
+				<feature name="SASL">
+					<description>Simple Authentication and Security Layer</description>
+				</feature>
+			</and>
+			<and name="Authorization">
+				<feature name="ACL">
+					<description>Access Control List [ACL]</description>
+				</feature>
+			</and>
+		</and>
+		<and name="Implementation and Services">
+			<feature name="Free/Open Source"/>
+			<feature name="Commercial"/>
+			<and name="Client">
+				<graphics key="collapsed" value="false"/>
+				<alt name="Prefabricated">
+					<feature name="Native Protocol Implementation"/>
+					<feature name="Native Library Binding"/>
+				</alt>
+			</and>
+			<feature name="Language"/>
+			<and name="Community">
+				<and name="Documentation">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Tutorial"/>
+				</and>
+			</and>
+			<feature name="Ease of Implementation"/>
+		</and>
+	</and>
+	<and name="Quantitative">
+		<and name="Benchmark">
+			<feature name="Number of Computers"/>
+			<feature name="Network"/>
+			<feature name="Deployment"/>
+			<feature name="Client Programming Language"/>
+			<and name="Payload Size">
+				<description>in bytes</description>
+				<feature name="Minimal Sensor"/>
+				<feature name="Basic System"/>
+				<feature name="Complex System"/>
+				<feature name="Information Model"/>
+			</and>
+			<and name="Sending Rate">
+				<description>in kilo messages per second (kmps)</description>
+				<graphics key="collapsed" value="false"/>
+				<feature name="KMPS"/>
+			</and>
+		</and>
+		<and name="Performance">
+			<feature name="Throughput"/>
+			<feature name="Latency"/>
+			<feature name="Bandwidth/Overhead"/>
+			<feature name="Flexibility"/>
+			<feature name="Bidirectional Communication"/>
+			<feature name="Standardization"/>
+			<feature name="Development Effort"/>
+		</and>
+	</and>
+</and>
+</struct>
+</featureModel>

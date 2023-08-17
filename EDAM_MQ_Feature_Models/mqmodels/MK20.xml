@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="MK20">
+			<and mandatory="true" name="IoT Reference Model">
+				<and mandatory="true" name="Level 1: Physical Devices and Controllers">
+					<feature name="Endpoint Devicve"/>
+				</and>
+				<and mandatory="true" name="Level 2: Connectivity">
+					<feature name="Device Communication"/>
+					<feature name="Reliable Delivery"/>
+					<feature name="Protocol Implementation"/>
+					<feature name="Switching and Routing"/>
+					<feature name="Protocol Translation"/>
+					<feature name="Network-level Security"/>
+					<feature name="Network Analytics"/>
+				</and>
+				<and mandatory="true" name="Level 3: Edge Computing">
+					<and name="Data Element Function">
+						<feature name="Data Filtering"/>
+						<feature name="Clean Up"/>
+						<feature name="Aggregation"/>
+						<feature name="Packet Content Inspection"/>
+						<feature name="Network and Data Level Analytics"/>
+						<feature name="Thresholding"/>
+					</and>
+					<and name="Event Generation and Processing">
+						<feature name="Data Evaluation"/>
+						<feature name="Data Reformatting"/>
+						<feature name="Expanding or Decoding"/>
+						<feature name="Distillation/Reduction"/>
+						<feature name="Threashold/Alert Evaluation"/>
+					</and>
+				</and>
+				<and mandatory="true" name="Level 4: Data Accumulation or Storage">
+					<feature name="Data-in-motion to Data-at-rest Conversion"/>
+					<feature name="Network Packet to Relational Database Table Formatting"/>
+					<feature name="Event-based to Query-based Computing Transition"/>
+					<and name="Data Reduction">
+						<feature name="Filtering"/>
+						<feature name="Selective Storing"/>
+					</and>
+				</and>
+				<and mandatory="true" name="Level 5: Data Absctration">
+					<and name="Data Virtualization">
+						<feature name="Access to Multiple Data Stores"/>
+						<feature name="Data Integration"/>
+					</and>
+					<feature name="Consistent Data Semantics Assurance"/>
+					<and name="Data Protection">
+						<feature name="Authentication"/>
+						<feature name="Authorization"/>
+						<feature name="Normatization or Denormalization"/>
+					</and>
+					<and name="Quick Application Access">
+						<graphics key="collapsed" value="false"/>
+						<feature name="Indexing"/>
+					</and>
+				</and>
+				<and mandatory="true" name="Level 6: Application">
+					<feature name="Device Data Monitoring"/>
+					<feature name="Device Control"/>
+					<feature name="Device and Non-device Data Combination"/>
+					<feature name="Information Interpretation"/>
+					<feature name="Reporting"/>
+				</and>
+			</and>
+			<and name="MQTT Implementation Features Taxonomy">
+				<and name="Source Code Availability">
+					<and name="Type">
+						<feature name="Closed-source"/>
+						<feature name="Open-source"/>
+					</and>
+					<feature name="License"/>
+				</and>
+				<and name="Source Code Metric">
+					<feature name="Programming Language"/>
+					<feature name="Number of Files"/>
+					<feature name="Number of Blank Lines"/>
+					<feature name="Number of Comment Lines"/>
+					<feature name="Lines of Code"/>
+				</and>
+				<and name="Design and Implementation">
+					<feature name="Programming language [2]"/>
+					<feature name="Supporteed Platform/OS"/>
+					<feature name="Latest Stable Release"/>
+					<feature name="Date of Release"/>
+					<feature name="Cross-complilation Ability"/>
+					<feature name="Developer"/>
+				</and>
+				<and name="Protocol Feature">
+					<feature name="QoS"/>
+					<feature name="Retain Flag"/>
+					<feature name="Persistent Session"/>
+					<feature name="Shared Subscription"/>
+					<feature name="Last Will and Testament"/>
+					<feature name="Error Log"/>
+					<feature name="Build-in Gateway"/>
+					<feature name="MQTT Version"/>
+					<feature name="MQTT-SN Support"/>
+				</and>
+				<and name="Security">
+					<feature name="Authentication [2]"/>
+					<feature name="MQTT over TSL/SSL"/>
+					<feature name="TCP"/>
+					<feature name="MQTT over WebSockets WS/WSS"/>
+					<feature name="Thread Security"/>
+				</and>
+				<feature name="Cloud Offering"/>
+				<feature name="Data Visualization Support"/>
+			</and>
+		</and>
+	</struct>
+</featureModel>

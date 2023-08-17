@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<calculations key="tautology" value="true"/>
+		<calculations key="auto" value="false"/>
+		<graphics key="legendposition" value="713,9"/>
+		<graphics key="showconstraints" value="true"/>
+		<calculations key="redundant" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+		<calculations key="features" value="true"/>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<calculations key="constraints" value="true"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="BD10">
+			<or mandatory="true" name="GeneralReferenceModel">
+				<feature name="EDA_SensorNetworks"/>
+				<feature name="EDA_AnalysisSystems"/>
+			</or>
+			<and mandatory="true" name="ArchitecturalPattern">
+				<and mandatory="true" name="LayeredArchitecture">
+					<feature mandatory="true" name="MonitoringLayer"/>
+					<feature mandatory="true" name="EventprocessingLayer"/>
+					<feature mandatory="true" name="EventHandlingLayer"/>
+				</and>
+				<feature name="EventProcessingAgents"/>
+				<feature name="ProcessingPipeline"/>
+			</and>
+			<and mandatory="true" name="DesignPattern">
+				<feature name="Cleaning"/>
+				<feature name="Filtering"/>
+				<and name="Transformation">
+					<feature name="Translation"/>
+					<feature name="ContentEnrichment"/>
+				</and>
+				<and name="Synthesis">
+					<feature name="DomainSpecificCorrelation"/>
+					<feature name="TemporalCorrelation"/>
+					<feature name="SpartialCorrelation"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>

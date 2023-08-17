@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Sh22">
+			<and name="General Use Cases">
+				<feature name="Activity tracking"/>
+				<feature name="Messaging"/>
+				<feature name="Metrics and logging"/>
+				<feature name="Commit log"/>
+				<feature name="Stream processing"/>
+			</and>
+			<and name="Cross-Cluster Data Mirroring">
+				<and name="Use Cases [1]">
+					<feature name="Regional and central clusters"/>
+					<feature name="High availability [HA] and disaster recovery [DR]"/>
+					<feature name="Regulatory compliance"/>
+					<feature name="Cloud migrations"/>
+					<feature name="Aggregation of data from edge clusters"/>
+				</and>
+				<and name="Multicluster Architectures">
+					<feature name="Hub-and-Spoke"/>
+					<feature name="Active-Active"/>
+					<feature name="Active-Standby"/>
+					<feature name="Stretch Clusters"/>
+				</and>
+				<feature name="MirrorMaker"/>
+				<feature name="uReplicator"/>
+			</and>
+			<and name="Confluent Cross-Datacenter Mirroring">
+				<feature name="Confluent Replicator"/>
+			</and>
+			<and name="Quality of Service">
+				<feature name="Multiple Producers"/>
+				<feature name="Multiple Consumers"/>
+				<feature name="Disk-Based Retention"/>
+				<feature name="Scalability"/>
+				<feature name="Performance"/>
+				<and name="Reliability">
+					<feature name="at-least-once"/>
+					<feature name="exactly-once"/>
+				</and>
+			</and>
+			<and name="Plattforms">
+				<and name="Kafka Streams">
+					<and name="Use Cases">
+						<feature name="Customer service"/>
+						<feature name="Internet of Things"/>
+						<feature name="Fraud / anomaly detection"/>
+					</and>
+					<and name="Design Patterns">
+						<feature name="Single-Event Processing"/>
+						<feature name="Processing with Local State"/>
+						<feature name="Multiphase Processing/Repartitioning"/>
+						<feature name="Processing with External Lookup: Stream-Table Join"/>
+						<feature name="Table-Table Join"/>
+						<feature name="Streaming Join"/>
+						<feature name="Out-of-Sequence Events"/>
+						<feature name="Reprocessing"/>
+						<feature name="Interactive Queries"/>
+					</and>
+				</and>
+				<and name="Kafka Connect">
+					<and name="Use Case">
+						<feature name="Building Data Pipelines"/>
+					</and>
+					<and name="in-memory objects">
+						<feature name="data types"/>
+						<feature name="schemas"/>
+					</and>
+					<feature name="Single Message Transformation"/>
+					<feature name="API"/>
+					<feature name="Buffering"/>
+				</and>
+			</and>
+			<and name="Security">
+				<feature name="Failure Handling"/>
+				<and name="Encryption">
+					<feature name="End-to-End Encryption"/>
+				</and>
+				<and name="Authorization">
+					<feature name="AclAuthorizer"/>
+					<feature name="Customizing Authorization"/>
+					<feature name="Auditing logs"/>
+				</and>
+				<and name="Kafka Deployment">
+					<feature name="Client authenticity"/>
+					<feature name="Server authenticity"/>
+					<feature name="Data privacy"/>
+					<feature name="Data integrity"/>
+					<feature name="Access control"/>
+					<feature name="Auditability"/>
+					<feature name="Availability"/>
+				</and>
+				<and name="Security Protocols">
+					<feature name="PLAINTEXT"/>
+					<feature name="SSL"/>
+					<feature name="SASL_PLAINTEXT"/>
+					<feature name="SASL_SSL"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>

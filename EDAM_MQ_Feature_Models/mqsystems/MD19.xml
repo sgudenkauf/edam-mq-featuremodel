@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="MD19">
+			<graphics key="collapsed" value="false"/>
+			<and name="Client Library">
+				<feature name="Microsoft .NET"/>
+				<feature name="Java"/>
+				<feature name="NewFeature"/>
+				<feature name="Erlang [2]"/>
+				<feature name="Ruby"/>
+				<feature name="Python"/>
+				<feature name="PHP"/>
+				<feature name="Perl"/>
+				<feature name="C/C++"/>
+				<feature name="NodeJS"/>
+				<feature name="Lisp"/>
+			</and>
+			<and name="Implementation">
+				<feature name="Erlang"/>
+			</and>
+			<feature name="Routing"/>
+			<and name="Reliability">
+				<feature name="Disk-based Message Persistence"/>
+				<feature name="Message Delivery Acknowledgement"/>
+			</and>
+			<and name="Clustering">
+				<feature name="Local Network Server Clustering"/>
+				<feature name="Queue Mirroring"/>
+			</and>
+			<and name="Management UI">
+				<feature name="User Management"/>
+				<feature name="Permission Management"/>
+				<feature name="Exchange Management"/>
+				<feature name="Queue Management"/>
+			</and>
+			<and name="Command Line Interface">
+				<feature name="rabbitmqctrl"/>
+				<feature name="rabbitmqadmin"/>
+			</and>
+			<and name="Platform">
+				<feature name="Windows Server"/>
+				<feature name="Linux/Unix"/>
+				<feature name="MacOS"/>
+				<feature name="Amazon EC2"/>
+				<feature name="Microsoft Azure"/>
+			</and>
+			<and name="Networking Protocol">
+				<and name="AMQP">
+					<and name="Message">
+						<and name="Attribute">
+							<feature name="Metadata"/>
+							<feature name="Application Data"/>
+						</and>
+						<and name="Routing Key">
+							<feature name="Queue Name"/>
+							<feature name="User-defined Name"/>
+							<feature name="User-defined Name List"/>
+						</and>
+					</and>
+					<feature name="Publisher"/>
+					<and name="Consumer">
+						<and name="Message Acknowledgement">
+							<feature name="Automatic Acknowledgement"/>
+							<feature name="User-determined Acknowledgement"/>
+						</and>
+					</and>
+					<and name="Broker">
+						<and name="Message Handling">
+							<feature name="Message Routing"/>
+							<feature name="Message Return to Publisher"/>
+							<feature name="Message Dropping"/>
+							<feature name="Dead Letter Queue Placement"/>
+						</and>
+					</and>
+					<and name="Entitiy">
+						<graphics key="collapsed" value="false"/>
+						<feature name="Queue"/>
+						<and name="Exchange">
+							<and name="Type">
+								<feature name="Default"/>
+								<feature name="Direct"/>
+								<feature name="Fanout"/>
+								<feature name="Topic"/>
+							</and>
+						</and>
+						<and name="Binding">
+							<feature name="Binding Key"/>
+						</and>
+					</and>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>

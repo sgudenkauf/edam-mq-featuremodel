@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="598,17"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Fu21">
+			<description>Compares five popular MQ systems that are representative in multiple aspects. The work includes a summary of the main features of MQ systems as evaluation metrics. The main features are discussed in terms of system production, quality of serviec, and performance.</description>
+			<graphics key="collapsed" value="false"/>
+			<and mandatory="true" name="Production">
+				<graphics key="collapsed" value="false"/>
+				<and mandatory="true" name="Development Language">
+					<description>Warum kein Skala?</description>
+					<feature name="Java"/>
+				</and>
+				<and mandatory="true" name="Community Activity">
+					<feature name="Number of Contributors"/>
+				</and>
+				<and mandatory="true" name="Communication Protocol">
+					<feature name="AMQP"/>
+					<feature name="XMPP"/>
+					<feature name="REST"/>
+					<feature name="STOMP"/>
+				</and>
+				<and mandatory="true" name="Consumption Mode">
+					<feature name="Push"/>
+					<feature name="Pull"/>
+				</and>
+				<and mandatory="true" name="System Architecture">
+					<feature name="Master-Slave"/>
+					<feature name="Peer-to-Peer"/>
+				</and>
+				<and mandatory="true" name="Message Queuing Model">
+					<feature name="Point-to-Point"/>
+					<feature name="Publish-Subscribe"/>
+				</and>
+				<and mandatory="true" name="Usability">
+					<feature name="Easiness of Installation"/>
+					<feature name="Completeness of Documentation"/>
+					<feature name="Management and Monitoring Functionalities"/>
+				</and>
+				<and mandatory="true" name="Compatibility">
+					<and name="Data Storage">
+						<feature name="HDFS"/>
+					</and>
+					<and name="Data Processing">
+						<feature name="Spark"/>
+						<feature name="Flink"/>
+					</and>
+				</and>
+			</and>
+			<and mandatory="true" name="Quality-of-Service">
+				<and mandatory="true" name="Delivery Guarantee">
+					<feature name="At-Most-Once"/>
+					<feature name="At-Least-Once"/>
+					<feature name="Exactly-Once"/>
+				</and>
+				<and mandatory="true" name="Ordering Guarantee">
+					<graphics key="collapsed" value="false"/>
+					<feature name="No-Ordering"/>
+					<feature name="Partition-/Queue-Ordering"/>
+					<feature name="Global-Ordering"/>
+				</and>
+				<and mandatory="true" name="Reliability">
+					<feature name="Message Synchronization and Replication"/>
+				</and>
+				<and mandatory="true" name="Scalability">
+					<graphics key="collapsed" value="false"/>
+					<feature name="Number of Messages"/>
+					<feature name="Number of Partitions"/>
+					<feature name="Number of Producers/Consumers"/>
+				</and>
+			</and>
+			<and mandatory="true" name="Performance">
+				<and mandatory="true" name="Latency">
+					<feature name="Packet Metadata Processing"/>
+					<and name="Packet Replication">
+						<feature name="Packet Size"/>
+					</and>
+					<and name="Memory Access">
+						<or name="Access Operation">
+							<feature name="Write"/>
+							<feature name="Read"/>
+						</or>
+						<or name="Location">
+							<feature name="DRAM"/>
+							<feature name="Disk"/>
+						</or>
+						<or name="Access Method">
+							<feature name="Sequential"/>
+							<feature name="Random"/>
+						</or>
+					</and>
+					<and name="Overhead">
+						<description>e.g., Ordering Guarantee</description>
+						<feature name="Overhead from Ordering Guarantee"/>
+					</and>
+					<feature name="Dequeuing Latency"/>
+				</and>
+				<and name="Throughput">
+					<feature name="Batch Size"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>

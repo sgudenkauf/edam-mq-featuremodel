@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="596,14"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Co20">
+			<graphics key="collapsed" value="false"/>
+			<and abstract="true" name="Confluent Platform">
+				<and mandatory="true" name="Plattform Architecture">
+					<graphics key="collapsed" value="false"/>
+					<and mandatory="true" name="Kafka">
+						<feature mandatory="true" name="Connect Workers">
+							<description>Hello</description>
+						</feature>
+						<feature mandatory="true" name="ZooKeeper"/>
+						<feature mandatory="true" name="Brokers"/>
+						<feature mandatory="true" name="Clients"/>
+						<feature mandatory="true" name="Streams API"/>
+					</and>
+					<and mandatory="true" name="Confluent">
+						<feature name="REST Proxy"/>
+						<feature mandatory="true" name="ksqlDB Server"/>
+						<feature mandatory="true" name="Replicator"/>
+						<feature mandatory="true" name="Self-Balancing Clusters"/>
+						<feature mandatory="true" name="Control Center"/>
+						<feature name="Operator"/>
+						<feature name="Platform Ansible Playbooks and Templates"/>
+					</and>
+					<feature name="Tiered Storage"/>
+					<feature name="Multi-Region Clusters"/>
+					<feature name="Schema Validation"/>
+					<feature name="RBAC"/>
+					<or mandatory="true" name="Deployment">
+						<or name="Cloud">
+							<feature name="GCP"/>
+							<feature name="Azure"/>
+							<feature name="AWS"/>
+						</or>
+						<feature name="On-Premises"/>
+					</or>
+				</and>
+				<or mandatory="true" name="Reference Architecture">
+					<feature name="Large Cluster"/>
+					<feature name="Small Cluster"/>
+				</or>
+			</and>
+		</and>
+	</struct>
+</featureModel>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendposition" value="856,1"/>
+		<graphics key="legendautolayout" value="false"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Th15">
+			<graphics key="collapsed" value="false"/>
+			<and name="LISA">
+				<and mandatory="true" name="Message Bus/Enterprise Service Bus">
+				<graphics key="collapsed" value="false"/>
+				<and mandatory="true" name="Enterprise Integration Pattern">
+					<feature mandatory="true" name="Message"/>
+					<feature mandatory="true" name="Messaging"/>
+					<feature mandatory="true" name="Publish-Subscribe-Channel"/>
+					<feature mandatory="true" name="Message Filter"/>
+				</and>
+				<and mandatory="true" name="Event/Message Format">
+				<and mandatory="true" name="Header">
+					<feature name="Message Sending and Routing Information"/>
+				</and>
+				<and mandatory="true" name="Body">
+					<feature mandatory="true" name="Unique Event Identifier"/>
+					<feature mandatory="true" name="Timestamp"/>
+					<and name="Orderet Attribute-Value Map">
+						<or name="Value">
+							<feature name="Primitive Datat Type"/>
+							<feature name="List"/>
+							<feature name="Map"/>
+						</or>
+					</and>
+				</and>
+			</and>
+		</and>
+		<feature mandatory="true" name="Attribute Pattern"/>
+		<alt abstract="true" mandatory="true" name="Endpoint">
+			<and name="Communication Endpoint">
+				<feature mandatory="true" name="Device-to-LISA-message-format Conversion"/>
+				<feature mandatory="true" name="Event Filtering"/>
+				<feature mandatory="true" name="Event Data to Device Conversion"/>
+			</and>
+			<and name="Service Endpoint">
+				<alt abstract="true" name="Transformation">
+					<feature name="Fill Transformation"/>
+					<feature name="Map Transformation"/>
+					<feature name="Fold Transformation"/>
+				</alt>
+			</and>
+		</alt>
+		<alt abstract="true" name="Application">
+			<feature name="Device"/>
+			<feature name="Service"/>
+			<feature name="External Application"/>
+		</alt>
+	</and>
+	<and name="Plant">
+		<and name="Workstation">
+			<feature name="Operator"/>
+			<feature name="Machine"/>
+			<alt abstract="true" name="Operation">
+				<feature name="Observable Operation"/>
+				<feature name="Non-observable Operation"/>
+			</alt>
+		</and>
+		<and name="KPI">
+			<feature name="Product Lead Time"/>
+			<feature name="Downtime"/>
+			<feature name="Availability"/>
+			<feature name="Product Position Time"/>
+		</and>
+		<and name="Control">
+			<feature name="Machine Centered Plant View"/>
+			<feature name="Order-Centered View"/>
+		</and>
+	</and>
+</and>
+</struct>
+</featureModel>

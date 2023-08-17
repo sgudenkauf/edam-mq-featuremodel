@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Pf22">
+			<and name="Message">
+				<feature name="ZMTP [ZeroMQ Message Transport Protocol]"/>
+				<and name="serialization">
+					<feature name="JSON"/>
+					<feature name="XML"/>
+					<feature name="MessagePack"/>
+					<feature name="..."/>
+				</and>
+				<feature name="Multipart Messages">
+					<description>Dabei wer- den mehrere Frames zu einer Nachricht zusammengefasst, die empfangen und gesendet wird.</description>
+				</feature>
+			</and>
+			<and name="asynchronous communication">
+				<and name="transport protocols">
+					<feature name="TCP"/>
+					<feature name="INPROC"/>
+					<feature name="IPC"/>
+					<feature name="[E]PGM"/>
+				</and>
+				<feature name="High Water Mark [HWM]">
+					<description>wird die Anzahl Nachrichten in der Queue festge- legt. Bei Überschreiten dieser Marke wird die Anwendung blockiert oder Nachrichten verworfen.</description>
+				</feature>
+			</and>
+			<and name="socket-API">
+				<and name="supported programming languages">
+					<feature name="C"/>
+					<feature name="Java"/>
+					<feature name="Python"/>
+				</and>
+				<and name="automated">
+					<feature name="routing"/>
+					<feature name="framing"/>
+					<feature name="connection establishment"/>
+					<feature name="disconnection"/>
+				</and>
+				<feature name="dynamic connections"/>
+			</and>
+			<feature name="OpenSource LGPLv3"/>
+			<and name="Messaging Patterns">
+				<and name="Request-Reply">
+					<and name="synchronous communication">
+						<feature name="strong coupling"/>
+					</and>
+					<and name="Socketpairs">
+						<feature name="REQ"/>
+						<feature name="REP"/>
+					</and>
+					<and name="asynchronous_communication">
+						<feature name="ROUTER socket"/>
+						<feature name="DEALER socket"/>
+					</and>
+				</and>
+				<and name="Pub-Sub">
+					<feature name="direct message"/>
+					<feature name="broker"/>
+					<feature name="asynchronous comm"/>
+					<and name="loose coupling">
+						<feature name="robust"/>
+					</and>
+					<and name="socketpairs">
+						<feature name="PUB"/>
+						<feature name="SUB"/>
+					</and>
+					<feature name="node owned queue"/>
+					<and name="anonymous communication">
+						<and name="proxy">
+							<and name="sockets">
+								<feature name="XSUB"/>
+								<feature name="XPUB"/>
+							</and>
+						</and>
+					</and>
+				</and>
+				<and name="Pipeline">
+					<and name="socketpairs_">
+						<feature name="PUSH"/>
+						<feature name="PULL"/>
+					</and>
+					<feature name="parallel data processing"/>
+				</and>
+				<and name="Exclusive Pair">
+					<and name="sockets_">
+						<feature name="PAIR"/>
+					</and>
+					<and name="thread communication">
+						<feature name="inproc"/>
+					</and>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>

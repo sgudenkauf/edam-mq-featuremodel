@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Yo19">
+			<description>Features of the MOM systems comparison from Table 1, page 94</description>
+			<graphics key="collapsed" value="false"/>
+			<and abstract="true" name="Table Model">
+				<and mandatory="true" name="Message">
+					<and mandatory="true" name="Supported Formats">
+						<feature name="String"/>
+						<feature name="Byte"/>
+						<feature name="Map"/>
+						<feature name="Object"/>
+						<feature name="Integer"/>
+						<feature name="Bit"/>
+						<feature name="Field Table"/>
+					</and>
+					<and mandatory="true" name="Supported Protocols">
+						<feature name="Kafka"/>
+						<feature name="AMQO"/>
+						<feature name="STOMP"/>
+						<feature name="MQTT"/>
+						<feature name="XMPP"/>
+						<feature name="TCP"/>
+						<feature name="UDP"/>
+						<feature name="RocketMQ"/>
+						<feature name="OpenWire"/>
+					</and>
+				</and>
+				<and mandatory="true" name="Queue">
+					<feature mandatory="true" name="Orderliness of Consumption"/>
+					<feature mandatory="true" name="Persistence"/>
+				</and>
+				<and mandatory="true" name="Message Delivery Mode">
+					<feature mandatory="true" name="Pub/Sub"/>
+					<feature mandatory="true" name="Point-to-Point"/>
+				</and>
+				<and mandatory="true" name="Cluster">
+					<and mandatory="true" name="Cluster Solution">
+						<feature name="Natural Stateless Cluster"/>
+						<feature name="Cluster Support"/>
+					</and>
+					<feature mandatory="true" name="Load Balancing"/>
+				</and>
+				<and mandatory="true" name="Security">
+					<and mandatory="true" name="Encryption Algorithm">
+						<feature name="SSL"/>
+						<feature name="TLS"/>
+						<feature name="CurveZMQ over TCP"/>
+					</and>
+					<and mandatory="true" name="Authentication">
+						<feature name="SASL"/>
+						<feature name="JAAS"/>
+					</and>
+				</and>
+				<and mandatory="true" name="Transaction">
+					<feature mandatory="true" name="Support"/>
+				</and>
+				<and mandatory="true" name="User API">
+					<and mandatory="true" name="Supported Development Languages">
+						<feature name="Java"/>
+						<feature name=".NET"/>
+						<feature name="PHP"/>
+						<feature name="Python"/>
+						<feature name="Erlang"/>
+						<feature name="Perl"/>
+						<feature name="JavaScripüt"/>
+						<feature name="Ruby"/>
+						<feature name="Go"/>
+						<feature name="C"/>
+						<feature name="C++"/>
+						<feature name="C#"/>
+						<feature name="JMS"/>
+					</and>
+				</and>
+			</and>
+			<and abstract="true" name="MOM Overview">
+				<and mandatory="true" name="Basic Structure">
+					<feature name="Message Protocol"/>
+					<and name="Queue Management">
+						<feature name="Queue [2]"/>
+					</and>
+					<feature name="Delivery Mode"/>
+					<feature name="Cluster Management"/>
+					<feature name="Security Mechanism"/>
+					<feature name="Transaction Guarantee"/>
+					<feature name="Log Management"/>
+					<feature name="Monitoring"/>
+					<feature name="User Interface"/>
+				</and>
+				<and mandatory="true" name="Message [2]">
+					<and name="Message Composition">
+						<graphics key="collapsed" value="false"/>
+						<alt name="Header">
+							<feature name="Message Type"/>
+							<feature name="Unique Identifier"/>
+							<feature name="Destination"/>
+							<feature name="Priority"/>
+							<feature name="Validity Period"/>
+							<feature name="Message Size"/>
+							<feature name="User-defined Attribute"/>
+						</alt>
+						<and name="Body">
+							<feature name="Content"/>
+							<feature name="File Name"/>
+						</and>
+					</and>
+					<alt name="Message Management">
+						<feature name="Life Cycle Management"/>
+						<feature name="Message Selector"/>
+						<feature name="Message Compression"/>
+					</alt>
+				</and>
+				<and name="Queue Management [2]">
+					<and name="Queue [3]">
+						<feature mandatory="true" name="Message Index Area"/>
+						<feature mandatory="true" name="Data Storage Area"/>
+						<and name="Persistence [2]">
+							<feature name="Temporary"/>
+							<feature name="On Disk"/>
+							<feature name="Auxuiliary Storage"/>
+						</and>
+					</and>
+					<and name="Queue Manager">
+						<feature name="Message Ordering"/>
+						<and name="Message Persistence">
+							<feature name="On Disk [2]"/>
+							<feature name="Fixed"/>
+							<feature name="Persistent Storage"/>
+						</and>
+						<and name="Message Reliability">
+							<and name="Message Storage Reliability">
+								<graphics key="collapsed" value="false"/>
+								<feature name="Master-Slave/Asynchronous Subscription"/>
+								<feature name="Master-Slave/Synchronous Replication"/>
+							</and>
+							<feature name="Queue Expansion"/>
+						</and>
+					</and>
+				</and>
+				<and mandatory="true" name="Message Delivery Mode [2]">
+					<and name="Point-to-Point [2]">
+						<feature name="Fire-and-Forget"/>
+						<feature name="Request/Response"/>
+					</and>
+					<and name="Pub/Sub [2]">
+					<feature name="Topic"/>
+					<or abstract="true" name="Subscription">
+						<feature name="Durable Subscription"/>
+						<feature name="Non-durable Subscription"/>
+					</or>
+					<and name="Matching Algorithm">
+						<feature name="Rule Engine"/>
+					</and>
+					<feature name="Implrovement"/>
+				</and>
+			</and>
+			<and mandatory="true" name="Cluster [2]">
+				<feature name="Single-Point-of-Failure Prevention"/>
+				<feature name="Load Balancing [2]"/>
+			</and>
+			<and mandatory="true" name="Security [2]">
+				<and name="Security Service">
+					<and name="Network Layer">
+						<feature name="Identity Authentication"/>
+						<feature name="SSL [2]"/>
+					</and>
+					<and name="Channel Layer">
+						<feature name="Data Packet Encryption/Decryption"/>
+						<feature name="SSL [3]"/>
+					</and>
+					<and name="Application Layer">
+						<feature name="Message Encryption/Decryption"/>
+					</and>
+					<feature name="Privacy"/>
+				</and>
+				<feature name="Message Fault Tolerance"/>
+			</and>
+			<and mandatory="true" name="Transaction Guarantee ">
+				<feature name="Atomic Partition Write"/>
+				<feature name="Two-phase Commit Protocol"/>
+			</and>
+			<and mandatory="true" name="Log, Monitor and Interface">
+				<and name="Log">
+					<and name="Log Use Cases">
+						<graphics key="collapsed" value="false"/>
+						<feature name="Failure Detection"/>
+						<feature name="Problem/Threat Detection"/>
+						<feature name="System Status Recording"/>
+					</and>
+					<and name="Cleanup Strategy">
+						<feature name="Deletion"/>
+						<feature name="Compression"/>
+					</and>
+				</and>
+				<and name="Monitor">
+					<and name="Monitor Use Cases">
+						<feature name="System Status Monitoring"/>
+						<feature name="System Configuration"/>
+						<feature name="Queue Message Transmission Status"/>
+						<feature name="Monitored Object  Start/Stop/Delete"/>
+					</and>
+					<and name="Monitoring Interface">
+						<feature name="RESTful HTTP API"/>
+					</and>
+				</and>
+				<and name="User Interface [2]">
+					<alt name="Programming Language Support">
+						<feature name="C [2]"/>
+						<feature name="C++ [2]"/>
+						<feature name="Java [2]"/>
+						<feature name="VisualBasic"/>
+						<feature name="COBOL"/>
+					</alt>
+					<alt name="Development Tool Support">
+						<feature name="WebSphere Studio Application Developer"/>
+						<feature name="PowerBuilder"/>
+						<feature name="Microsoft VisualC++"/>
+						<feature name="Visual Basic"/>
+						<feature name="Delphi"/>
+					</alt>
+				</and>
+			</and>
+		</and>
+	</and>
+</struct>
+</featureModel>

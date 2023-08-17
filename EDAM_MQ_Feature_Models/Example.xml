@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="System under Study">
+			<graphics key="collapsed" value="false"/>
+			<or mandatory="true" name="Mandatory Feature">
+				<graphics key="collapsed" value="false"/>
+				<feature name="Exclusive Feature 1"/>
+				<feature name="Exclusive Feature 2"/>
+			</or>
+			<alt name="Optional Feature">
+				<feature name="Alternative Feature 1"/>
+				<feature name="Alternative Feature 2"/>
+			</alt>
+		</and>
+	</struct>
+</featureModel>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="St18">
+			<and name="Production">
+				<and name="Client API">
+					<and name="Client">
+						<feature name="REST"/>
+						<feature name="Python"/>
+						<feature name="Scala"/>
+						<feature name="GO"/>
+					</and>
+					<and name="Stream Processing">
+						<feature name="Kafka Streams"/>
+						<feature name="KSQL"/>
+					</and>
+					<feature name="Kafka Connect"/>
+				</and>
+				<feature name="Architecture"/>
+			</and>
+			<and name="Performance">
+				<and name="Latency">
+					<feature name="In-Memory-Data"/>
+					<feature name="zero copy"/>
+					<feature name="Sequential"/>
+				</and>
+				<and name="Troughput">
+					<and name="Partitioning">
+						<and name="Index Structures">
+							<feature name="Hash Tables"/>
+							<feature name="B-trees"/>
+						</and>
+						<feature name="replicas over brokers"/>
+					</and>
+					<feature name="batched"/>
+					<feature name="flushed to disk synchronously"/>
+				</and>
+			</and>
+			<and name="Quality of Service">
+				<and name="Dependencies">
+					<and name="Loose coupling">
+						<description>like: shared nothing</description>
+						<feature name="Event filtering"/>
+					</and>
+					<feature name="Tight coupling">
+						<description>like: more sharing</description>
+					</feature>
+				</and>
+				<and name="Scalability [linearly]">
+					<feature name="Cluster number"/>
+					<feature name="Cluster size"/>
+					<feature name="Quotas"/>
+				</and>
+				<feature name="Data Store"/>
+				<and name="Reliability">
+					<feature name="Load-balancing groups"/>
+				</and>
+				<and name="Fault Tolerance">
+					<and name="replicating">
+						<feature name="durability of messages"/>
+					</and>
+					<feature name="Failuredetection"/>
+				</and>
+				<feature name="Failure Handling"/>
+				<feature name="Consumption parallelism"/>
+				<and name="Ordering Guarantees">
+					<feature name="global ordering"/>
+					<and name="relative ordering">
+						<feature name="key-based"/>
+					</and>
+				</and>
+			</and>
+			<and name="Security">
+				<feature name="Multitenancy for clusters">
+					<description>e.g. against DDOS attacs</description>
+				</feature>
+				<feature name="Encryption of Network communication"/>
+				<and name="Authentication">
+					<feature name="TLS client certificate"/>
+					<feature name="Kerberos"/>
+				</and>
+				<feature name="Authorization"/>
+				<and name="Permission system">
+					<description>linux like</description>
+					<feature name="User access control"/>
+				</and>
+			</and>
+		</and>
+	</struct>
+</featureModel>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="vertical"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="4"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="Ta23">
+			<and name="Messaging">
+				<and name="Pattern">
+					<feature name="Publish-Subscribe"/>
+				</and>
+				<and name="Message">
+					<feature name="Data Payload"/>
+					<feature name="Key"/>
+					<feature name="Property"/>
+					<feature name="Producer Name"/>
+					<feature name="Topic Name"/>
+					<feature name="Schema Version"/>
+					<feature name="Sequence ID"/>
+					<feature name="Message ID"/>
+					<feature name="Publish Time"/>
+					<feature name="Event Time"/>
+				</and>
+			</and>
+			<and name="Architecture">
+				<and name="Instance">
+					<and name="Cluster">
+						<and name="Broker">
+							<and name="HTTP Server">
+								<and name="REST API">
+									<feature name="Administrative"/>
+									<feature name="Topic Lookup"/>
+								</and>
+							</and>
+							<and name="Dispatcher/Asynchronous TCP Server">
+							<graphics key="collapsed" value="false"/>
+							<and name="Managed Ledger">
+								<feature name="Cache"/>
+							</and>
+							<feature name="Load Balancer"/>
+							<feature name="BK Client"/>
+							<feature name="Global Replicator"/>
+						</and>
+					</and>
+					<and name="Persistent Storage/BookKeeper">
+					<and name="Bookie">
+						<feature name="Message Data"/>
+						<feature name="Cursor"/>
+					</and>
+					<and name="Journal Storage">
+						<feature name="Transaction Log"/>
+					</and>
+				</and>
+				<and name="Metadata Store/ZooKeeper">
+				<and name="Pulsar Metadata">
+					<feature name="Topic Metadata"/>
+					<feature name="Schema"/>
+					<feature name="Broker Load Data"/>
+				</and>
+				<feature name="BookKeeper Metadata"/>
+			</and>
+			<and name="Proxy">
+				<feature name="TLS encryption"/>
+				<feature name="mTLS Authentication"/>
+			</and>
+		</and>
+		<and name="Configuration Store/ZooKeeper">
+		<feature name="Cluster Configuration"/>
+		<feature name="Tenant Configuration"/>
+		<feature name="Partitioned Topic Configuration"/>
+		<feature name="Namespace Configuration"/>
+	</and>
+</and>
+<and name="Client">
+	<and name="Producer">
+		<and name="Send Mode">
+			<feature name="Sync Send"/>
+			<feature name="Async Send"/>
+		</and>
+		<and name="Access Mode">
+			<feature name="Shared"/>
+			<feature name="Exclusive"/>
+			<feature name="ExclusiveWithFencing"/>
+			<feature name="WaitForExclusive"/>
+		</and>
+	</and>
+	<and name="Consumer">
+		<and name="Receive Mode">
+			<feature name="Sync Receive"/>
+			<feature name="Async Receive"/>
+		</and>
+	</and>
+	<feature name="Reader"/>
+</and>
+</and>
+</and>
+</struct>
+</featureModel>
