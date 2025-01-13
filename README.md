@@ -7,11 +7,23 @@ Feature model of event-driven architectures (EDA) in manufacturing based on the 
 
 ## Overview
 
-The increasing complexity of manufacturing processes, coupled with trends such as Industry 4.0 and edge computing, has made event-driven architectures a key enabler for efficient and scalable systems. This repository provides a consolidated **Feature Model (EDAM-MQ)** that can be used to uniformly describe, compare, and evaluate event-driven message queuing systems in manufacturing.
+The increasing complexity of manufacturing processes, coupled with trends such as Industry 4.0 and edge computing, has made event-driven architectures a key enabler for efficient and scalable systems. We surveyed recent models and architectures for such event-driven systems. Based on this survey, we propose a consolidated feature model to uniformly describe and evaluate event-driven manufacturing systems, regardless of whether an organization’s own architectural needs or the offers of external providers are evaluated.
+
+This repository contains:
+
+- A **consolidated feature model** for event-driven message queuing architectures in manufacturing (**EDAM-MQ**) that can be used to uniformly describe, compare, and evaluate event-driven message queuing systems in manufacturing.
+
+- The **individual feature models** of the surveyed models and architectures for event-driven MQ systems, from which we derived the EDAM-MQ model.
+
+> [!NOTE] Why feature models?
+> From our point of view, feature models provide three distinctive benefits:
+> 1. **Accessibility:** Similar to mind maps, feature models are simple and can be clearly arranged, represented, and compared to each other.
+> 2. **Formality:** Feature models are formal models that can be validated. Also, they allow modeling exclusions, multiple selections, and cardinality.
+> 3. **Structure recognition:** Feature models do not impose an organizational structure beforehand and even allow to model incomplete concepts. This is in contrast to tables, for example, in which columns and rows typically have to be named.
 
 ### Features of the EDAM-MQ Model
 
-The consolidated feature model is organized into four main groups:
+The consolidated EDAM-MQ feature model is organized into four main groups:
 
 1. **Use Case Features**: Common applications, including activity tracking, user notification, metrics logging, and industrial edge device connectivity.
 
@@ -27,6 +39,7 @@ The consolidated feature model is organized into four main groups:
 edam-mq-featuremodel/
 ├─ EDAM_MQ_Feature_Models/
 │  ├─ configs/
+│  ├─ docs/
 │  ├─ models/
 │  │  ├─ concepts/
 │  │  ├─ systems/
@@ -40,8 +53,11 @@ edam-mq-featuremodel/
 - `EDAM_MQ_Feature_Models/`
   - The top-level feature model project.
 
-- `config/`
+- `configs/`
   - Contains information about which features are enabled or disabled. The default configuration is `default.xml`
+  
+- `docs/`
+  - Contains additional information about the project in form of a [presentation slide](EDAM_MQ_Feature_Models/docs/20230929_DigiWe2023_RC.pdf).
 
 - `models/`
   - Contains XML files representing the individual feature models.
@@ -72,6 +88,8 @@ git clone https://github.com/<your-repo>/event-driven-mq-features.git
 2. Explore the feature models in the `models/` directory.
 
 3. Use [FeatureIDE](https://featureide.github.io/) to visualize and interact with the models.
+
+![Working with EDAM-MQ in FeatureIDE.](images/image2.png)
 
 ## Usage
 
