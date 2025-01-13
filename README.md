@@ -15,7 +15,8 @@ This repository contains:
 
 - The **individual feature models** of the surveyed models and architectures for event-driven MQ systems, from which we derived the EDAM-MQ model.
 
-> [!NOTE] Why feature models?
+> [!NOTE] 
+> **Why feature models?**
 > From our point of view, feature models provide three distinctive benefits:
 > 1. **Accessibility:** Similar to mind maps, feature models are simple and can be clearly arranged, represented, and compared to each other.
 > 2. **Formality:** Feature models are formal models that can be validated. Also, they allow modeling exclusions, multiple selections, and cardinality.
