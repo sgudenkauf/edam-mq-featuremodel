@@ -78,12 +78,6 @@ git clone https://github.com/<your-repo>/event-driven-mq-features.git
 ### Tool Support
 The feature models are designed to be compatible with [FeatureIDE](https://featureide.github.io/), an open-source tool for feature-oriented software development. The FeatureIDE web site provides [several introductory slides and a step-by-step tutorial](https://featureide.github.io/#documentation), as well as downloads for [prepackaged versions](https://featureide.github.io/#download) of the tool.
 
-
-
-### Visualization
-
-To be done...
-
 ### Application Scenarios
 
 - Comparative analysis of existing message queuing systems
@@ -92,12 +86,17 @@ To be done...
 
 - Basis for future research on event-driven architectures in industrial production
 
+<!--### Visualization
+
+To be done...-->
 
 ## Citation
 If you use the feature models in your research or projects, please cite the original paper:
 
 > Gudenkauf, Stefan; Franke, Javier; Behrens, Janek (2023): Features of Event-Driven Message Queuing Architectures in Manufacturing: A Reference Model for Comparison. *INFORMATIK 2023 - Designing Futures: Zukünfte gestalten*. DOI: [10.18420/inf2023_149](https://doi.org/10.18420/inf2023_149). Bonn: Gesellschaft für Informatik e.V.. PISSN: 1617-5468. ISBN: 978-3-88579-731-9. pp. 1435-1451. Ökologische Nachhaltigkeit - Zukunft nachhaltig gestalten durch digitalisierte Wertschöpfungsprozesse (DigiWe). Berlin. 26.-29. September 2023
 
+
+Reference in BibTeX format:
 
 ```java
 @incollection{incollection,
